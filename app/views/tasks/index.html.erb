@@ -1,0 +1,11 @@
+<% if @tasks %>
+<% @tasks.each do |task| %>
+<ul>
+    <li>
+    <%= task.tname %>
+    <%= link_to "Delete", "#", method: :delete %>
+
+    </li>
+</ul>
+<% end %>
+<% end %>

@@ -1,0 +1,18 @@
+<div class="container border border-dark shadow w-50 rounded-2 p-2 mt-4 ">
+
+
+<div class="text-start w-50 mx-auto" >
+<%= form_with(model: @project, local: true) do |f| %>
+
+<%= f.label :pname, "Title" %>
+<br>
+<%= f.text_field :pname %>
+<br>
+<br>
+
+
+<%= f.submit "Create Project", class: "btn btn-outline-success" %>
+
+<% end %>
+</div>
+</div>

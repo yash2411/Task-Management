@@ -1,0 +1,19 @@
+<div class="container border border-dark shadow w-50 rounded-2 p-2 mt-4 ">
+
+
+<div class="text-start w-50 mx-auto" >
+<%= form_with(model: @task, local: true) do |f| %>
+
+<%= f.label :pname, "Title" %>
+<br>
+<%= f.text_field :tname %>
+<br>
+<br>
+
+
+<%= hidden_field_tag(:pid, @pid) %>
+<%= f.submit "Create Task", class: "btn btn-outline-success" %>
+
+<% end %>
+</div>
+</div>

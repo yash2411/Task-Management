@@ -1,0 +1,11 @@
+<% if @projects %>
+<% @projects.each do |project| %>
+<ul>
+    <li>
+    <%= link_to project.pname, tasks_path(pid: project.id) %>
+    <%= link_to "Delete", project, method: :delete %>
+    <%= link_to "Add Task", new_task_path(pid: project.id) %>
+    </li>
+</ul>
+<% end %>
+<% end %>
