@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = 'Your Account Created Successfully'
-      redirect_to root_path
+      redirect_to login_path
     else
       flash[:danger] = 'Please enter valid user or password'
       redirect_to new_user_path

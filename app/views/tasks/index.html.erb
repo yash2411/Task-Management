@@ -1,11 +1,29 @@
-<% if @tasks %>
-<% @tasks.each do |task| %>
-<ul>
-    <li>
-    <%= task.tname %>
-    <%= link_to "Delete", "#", method: :delete %>
+<% provide(:title, "All Tasks") %>
 
-    </li>
-</ul>
+<div class="container mt-4">
+<% if !@tasks.empty? %>
+<h1 class="mb-4">List Of All Tasks</h1>
+<table class="table">
+  <tbody>
+      <tr>
+      <th scope="col">No</th>
+      <th scope="col">Tasks</th>
+
+    </tr>
+  </thead>
+  <% @count = 0 %>
+    <% @tasks.each do |task| %>
+    <tr>
+      <th scope="row"><%= @count += 1 %></th>
+      <td><%= task.tname %></td>
+      <td><%= link_to "Update", edit_task_path(task, pid: @project.id) %></td>
+      <td><%= link_to "Delete", task_path(task, pid: @project.id), method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<h2>No tasks</h2>
 <% end %>
-<% end %>
+<%= link_to "Create New Task", new_task_path(pid: @project.id) %>
+</div>

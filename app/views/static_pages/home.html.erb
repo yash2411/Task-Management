@@ -1,6 +1,11 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "Task Management") %>
+<div class="container-fluid">
+<h1>Welcome To Task Management</h1>
+<p>Let's create the project</p>
 
 <% if current_user %>
 <%= link_to "Create Project", new_project_path %>
+<% else %>
+<%= link_to "Login", login_path %>
 <% end %>
+</div>
